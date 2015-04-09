@@ -1,6 +1,6 @@
 Alex Frias (frias@seas.upenn.edu)
 Alex Peckman (apeckman@seas.upenn.edu)
-Group Name: Alex^2
+Group Name: Team Taryn
 
 Summary:
 Our project is a scheduling app. It takes in a list of people looking
