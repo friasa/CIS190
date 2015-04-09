@@ -6,7 +6,7 @@ Summary:
 Our project is a scheduling app. It takes in a list of people looking
 to take certain classes and each person's list of preferences
 over the list of classes as arguments. The app takes this list of student and 
-their preferences and using, the Top Trading Cycles algorithms, outputs 
+their preferences and using, the Deferred Acceptance and THE OTHER ONE algorithms, outputs 
 the socially optimal list of classes and which students are in them. 
 It can also be generalized take in any list of activites and people 
 wanting to participate in them, and compute the socially optimal matching. 
