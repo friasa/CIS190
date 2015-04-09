@@ -1,0 +1,40 @@
+Alex Frias (frias@seas.upenn.edu)
+Alex Peckman (apeckman@seas.upenn.edu)
+Group Name: Alex^2
+
+Summary:
+Our project is a scheduling app. It takes in a list of people looking
+to take certain classes and each person's list of preferences
+over the list of classes as arguments. The app takes this list of student and 
+their preferences and using, the Top Trading Cycles algorithms, outputs 
+the socially optimal list of classes and which students are in them. 
+It can also be generalized take in any list of activites and people 
+wanting to participate in them, and compute the socially optimal matching. 
+
+Description:
+The program will prompt the user for a list of activities, and a list 
+of students, each with a list of preferences over the list of activites. 
+It will also prompt the user to see which output style the user wants. 
+If the input is not valid, the program will output a usage statement.
+Otherwise, the program will take in the inputs and compute the socially 
+optimal list. The program output either a list of students and the 
+classes they are in, the list of classes with all of the students in 
+them, or both, depending on what the user prompted at the beginning of 
+the program. Additionally, the user will have the option of inputting 
+prefereneces that the classes have (such as if the professor has 
+preferences over which students are in his class, based on things such as 
+graduation year, GPA, etc.). This will enable the program to either compute 
+the optimal matching for either the students or the professors of the 
+classes, but not both, due to the nature of the Top Trading Algorithm. 
+This feature, for example, could make it more difficult for students in 
+certain grades or students with certain GPAs to enroll in more advanced courses. 
+
+Tasks:
+1. Design and implement the matching algorithm (Alex F.)
+2. Design and implement the underlying class components (Alex P.)
+3. Design and implement the user-interface (Alex F.)
+4. Debug and optimize (Both)
+
+Alpha goals:
+1. Have the matching algorithm implemented
+2. Have the class components and user-interface designed
