@@ -29,3 +29,11 @@ void Student::setName(string _name){
 string Student::getName(){
   return name;
 }
+
+void Student::setCourses(list<Course> _courses){
+  courses = _courses;
+}
+
+list<Courses> Student::getCourses(){
+  return courses;
+}
