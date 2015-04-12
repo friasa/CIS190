@@ -9,9 +9,10 @@
 
 using namespace std;
 
-Student::Student(string _name, list<Course> _course) {
+Student::Student(string _name, list<Course> _prefs, unsigned int _credits) {
   name = _name;
-  prefs = _course;
+  prefs = _prefs;
+  credits = _credits;
 }
 
 void Student::setPreferences(list<Course> _courses){
@@ -34,6 +35,22 @@ void Student::setCourses(list<Course> _courses){
   courses = _courses;
 }
 
-list<Courses> Student::getCourses(){
+list<Course> Student::getCourses(){
   return courses;
+}
+
+void Student::removeCourses(Course _courses){
+  courses.remove(_courses);
+}
+
+void Student::setCredits(unsigned int _credits){
+  credits = _credits;
+}
+
+unsigned int Student::getCredits(){
+  return credits;
+}
+
+void Student::addCourse(Course _course){
+  courses.add(_course);
 }

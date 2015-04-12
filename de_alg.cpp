@@ -7,5 +7,10 @@
  * Dependencies:
  *     A list x 
  *     A list y
- *     A set of preferences of each x onto y
  */
+
+list<Student> deferred_acceptance(list<Student> students,
+				  list<Course> courses) {
+  // lets gooooooo
+
+}

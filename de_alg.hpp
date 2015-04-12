@@ -3,4 +3,5 @@
  * Authors: Alex Frias and Alex Peckman
  */
 
-list<Students> deferred_acceptance(list<Students> students);
+list<Student> deferred_acceptance(list<Student> students, 
+				   list<Course> courses);

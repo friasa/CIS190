@@ -7,6 +7,7 @@
 #pragma once
 #include <string>
 #include <list>
+#include "courses.hpp"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ private:
   string name;
   list<Course> prefs;
   list<Course> courses;
+  unsigned int credits;
 public:
   void setPreferences(list<Course> _courses);
   list<Course> getPreferences();
@@ -22,7 +24,11 @@ public:
   string getName();
   void setCourses(list<Course> _courses);
   list<Course> getCourses();
-  Student(string _name, list<Course> _courses);
+  void removeCourses(Course _course);
+  void setCredits(unsinged int _credits);
+  unsigned int getCredits();
+  void addCourse(Course _course);
+  Student(string _name, list<Course> _prefs, unsigned int _credits);
 };
 
 
