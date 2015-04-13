@@ -9,8 +9,14 @@
  *     A list y
  */
 
-list<Student> deferred_acceptance(list<Student> students,
-				  list<Course> courses) {
-  // lets gooooooo
+list<Student*> deferred_acceptance(list<Student*> students,
+				   list<Course*> courses) {
+  // optimal matching to return
+  list<Student*> matching;
+  Student stud;
+  // first iteration
+  for (auto it = students.begin(); it != students.end(); it++){
+    students.getPreferences().front();
+  }
 
 }

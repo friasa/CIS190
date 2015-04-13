@@ -9,17 +9,17 @@
 
 using namespace std;
 
-Student::Student(string _name, list<Course> _prefs, unsigned int _credits) {
+Student::Student(string _name, list<Course*> _prefs, unsigned int _credits) {
   name = _name;
   prefs = _prefs;
   credits = _credits;
 }
 
-void Student::setPreferences(list<Course> _courses){
+void Student::setPreferences(list<Course*> _courses){
   prefs = _courses;
 }
 
-list<Course> Student::getPreferences(){
+list<Course*> Student::getPreferences(){
   return prefs;
 }
 
@@ -31,15 +31,15 @@ string Student::getName(){
   return name;
 }
 
-void Student::setCourses(list<Course> _courses){
+void Student::setCourses(list<Course*> _courses){
   courses = _courses;
 }
 
-list<Course> Student::getCourses(){
+list<Course*> Student::getCourses(){
   return courses;
 }
 
-void Student::removeCourses(Course _courses){
+void Student::removeCourses(Course *_courses){
   courses.remove(_courses);
 }
 
@@ -51,6 +51,6 @@ unsigned int Student::getCredits(){
   return credits;
 }
 
-void Student::addCourse(Course _course){
+void Student::addCourse(Course *_course){
   courses.add(_course);
 }
