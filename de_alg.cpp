@@ -13,7 +13,7 @@ list<Student*> deferred_acceptance(list<Student*> students,
 				   list<Course*> courses) {
   // optimal matching to return
   list<Student*> matching;
-  //Student stud;
+  //Student stud = new Student(stuff goes in here);
   // first iteration
   for (auto it = students.begin(); it != students.end(); it++){
     //students.getPreferences().front();
