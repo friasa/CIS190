@@ -8,6 +8,8 @@
  *     A list x 
  *     A list y
  */
+#pragma once
+#include <list>
 
 list<Student*> deferred_acceptance(list<Student*> students,
 				   list<Course*> courses) {
