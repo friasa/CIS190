@@ -3,8 +3,8 @@
  * 
  */
 
-#include "obs.cpp"
-#include "de_alg.cpp"
+#include "obs.hpp"
+#include "de_alg.hpp"
 #include <sstream>
 #include <string>
 #include <iostream>

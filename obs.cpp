@@ -53,7 +53,7 @@ void Student::addCourse(Course *_course){
 
 Course::Course(string course_name, int capacity) {
   name = course_name;
-  capacity = capacity;
+  this->capacity = capacity;
 }
 
 string Course::getName() {

@@ -9,7 +9,11 @@
  *     A list y
  */
 #pragma once
+#include "de_alg.hpp"
+#include "obs.hpp"
 #include <list>
+
+using namespace std;
 
 list<Student*> deferred_acceptance(list<Student*> students,
 				   list<Course*> courses) {

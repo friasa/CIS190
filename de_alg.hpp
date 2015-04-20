@@ -3,8 +3,8 @@
  * Authors: Alex Frias and Alex Peckman
  */
 #pragma once
-#include <list>
 #include "obs.hpp"
+#include <list>
 
 list<Student*> deferred_acceptance(list<Student*> students, 
 				   list<Course*> courses);
