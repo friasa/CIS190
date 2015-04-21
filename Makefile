@@ -11,3 +11,9 @@ obs.o: obs.cpp obs.hpp
 
 clean:
 	mv main working_file/
+
+cleaner:
+	mv *~ working_file/
+	mv *.o working_file/
+
+cleanest: clean cleaner
