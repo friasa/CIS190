@@ -13,6 +13,15 @@
 
 using namespace std;
 
+void printStudents(list<Student*> students){
+  for (auto it = students.begin(); it != students.end(); it++){
+    cout << (*it)->getName() << ": ";
+  }
+}
+
+
+
+
 int main(int argc, const char* argv[]){
 
   // check usage
