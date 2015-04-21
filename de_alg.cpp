@@ -22,7 +22,7 @@ list<Student*> deferred_acceptance(list<Student*> students,
   Student *stud = new Student("Alex", courses, 0);
   // first iteration
   for (auto it = students.begin(); it != students.end(); it++){
-    //students.getPreferences().front();
+    (*it)->getPreferences().front();
   }
   return matching;
 }
