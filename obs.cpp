@@ -5,10 +5,12 @@
 
 using namespace std;
 
-Student::Student(string _name, list<Course*> _prefs, unsigned int _credits) {
+// updated
+Student::Student(string _name, list<Course*> _prefs, unsigned int _credits, float _GPA) {
   name = _name;
   prefs = _prefs;
   credits = _credits;
+  GPA = _GPA;
 }
 
 Student::Student(){
@@ -58,6 +60,21 @@ void Student::addCourse(Course *_course){
   courses.push_front(_course);
 }
 
+float Student::getGPA(){ // new
+  return GPA;
+}
+
+void Student::setGPA(float _GPA){ // new
+  GPA = _GPA;
+}
+
+Course* Student::removePref(){ // new
+  Course *temp;
+  temp = prefs.front(); // need to check this
+  prefs.pop_front();
+  return temp;
+}
+
 Course::Course(string course_name, int capacity) {
   name = course_name;
   this->capacity = capacity;
@@ -88,9 +105,25 @@ void Course::setStudents(list<Student*> student_list) {
   students = student_list;
 }
 void Course::addStudent(Student* student_ptr) {
-  students.push_front(student_ptr);
+  // needs to add acording to GPA
+  // will look at list documentation
 }
 
 list<Student*> Course::getStudents() {
   return students;
+}
+
+int Course::getNumStuds(){ // new
+  return students.size();
+}
+
+Student* Course::getLastStud(){ // new
+  return students.back();
+}
+
+Student* Course::removeStud(){ // new
+  Student *temp;
+  temp = students.back();
+  students.pop_back();
+  return temp;
 }

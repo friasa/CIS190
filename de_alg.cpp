@@ -31,34 +31,34 @@ list<Student*> deferred_acceptance(list<Student*> students,
       } else if ((*it)->getGPA() > fav->getLastStud()->getGPA()){
 	fav->removeStud(); // should return removed student
 	(*it)->addCourse(fav);
-	fav->addStuent(*it); // ditto ^^^^
+	fav->addStudent(*it); // ditto ^^^^
       }
       (*it)->removePref(); // removes the first preference
     }
   }  
   // TODO: add is_full field to Student
   for (auto it = students.begin(); it != students.end(); ++it){
-    if ((*it)->getCourses().length() == 5) (*it)->is_full = true;
+    if ((*it)->getCourses().size() == 5) (*it)->is_full = true;
     else (*it)->is_full = false; 
     if ((*it)->is_full){
       temp.push_front(*it);
     }
   }
   // here we go
-  while (temp.length > 0){
+  while (temp.size() > 0){
     for (auto it = temp.begin(); it != temp.end(); ++it){
       fav = (*it)->getPreferences().front();
       if (fav->getNumStuds() < fav->getCapacity()){
 	(*it)->addCourse(fav);
 	fav->addStudent(*it);
-	if ((*it)->getCourses().length() == 5) (*it)->is_full == true;
+	if ((*it)->getCourses().size() == 5) (*it)->is_full = true;
       } else if ((*it)->getGPA() > fav->getLastStud()->getGPA()){
 	stud = fav->removeStud();
-	stud->removeCourse(fav);
+	stud->removeCourses(fav);
 	stud->is_full = false;
 	fav->addStudent(*it);
 	(*it)->addCourse(fav);
-	if ((*it)->getCourses().length() == 5) (*it)->is_full == true;
+	if ((*it)->getCourses().size() == 5) (*it)->is_full = true;
       }
       (*it)->removePref();
       if ((*it)->is_full) temp.remove(*it);
