@@ -35,6 +35,7 @@ int main(int argc, const char* argv[]){
   s_file_name = argv[1];
   c_file_name = argv[2];
 
+  // hello
   // parse files
   list<Student*> students;
   list<Course*> courses;
