@@ -11,6 +11,13 @@ Student::Student(string _name, list<Course*> _prefs, unsigned int _credits) {
   credits = _credits;
 }
 
+Student::Student(){
+  list<Course*> _prefs;
+  name = "";
+  prefs = _prefs;
+  credits = 0;
+}
+
 void Student::setPreferences(list<Course*> _courses){
   prefs = _courses;
 }
@@ -54,6 +61,11 @@ void Student::addCourse(Course *_course){
 Course::Course(string course_name, int capacity) {
   name = course_name;
   this->capacity = capacity;
+}
+
+Course::Course(){
+  name = "";
+  capacity = 0;
 }
 
 string Course::getName() {

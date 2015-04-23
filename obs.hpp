@@ -25,7 +25,7 @@ public:
   void addStudent(Student* student_ptr);
   list<Student*> getStudents();
   Course(string course_name, int capacity);
-
+  Course();
 };
 
 class Student {
@@ -46,5 +46,6 @@ public:
   unsigned int getCredits();
   void addCourse(Course *_course);
   Student(string _name, list<Course*> _prefs, unsigned int _credits);
+  Student();
 };
 
