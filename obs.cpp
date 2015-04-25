@@ -1,6 +1,7 @@
 #pragma once
 #include "obs.hpp"
 #include <list>
+#include <iterator>
 #include <string>
 
 using namespace std;
@@ -104,9 +105,14 @@ int Course::getCapacity() {
 void Course::setStudents(list<Student*> student_list) {
   students = student_list;
 }
+
 void Course::addStudent(Student* student_ptr) {
-  // needs to add acording to GPA
-  // will look at list documentation
+  // should insert according to GPA, assumes osrted list
+  for (auto it = students.begin(); it != students.end(); ++it){
+    if ((*it)->getGPA() > student_ptr->getGPA()) continue;
+    students.insert(it, student_ptr);
+    break;
+  }
 }
 
 list<Student*> Course::getStudents() {
@@ -124,6 +130,7 @@ Student* Course::getLastStud(){ // new
 Student* Course::removeStud(){ // new
   Student *temp;
   temp = students.back();
-  students.pop_back();
+  students.remove(*prev(students.end()));
+  //students.pop_back();
   return temp;
 }
