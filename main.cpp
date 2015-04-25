@@ -24,6 +24,11 @@ void printStudents(list<Student*> students){
 
 int main(int argc, const char* argv[]){
 
+  char c = "f";
+  string str = "";
+  str.append(c);
+  cout << c;
+
   // check usage
   if (argc != 3){
     cout << "Usage: ./main [student file] [course file]\n"; 
@@ -41,8 +46,10 @@ int main(int argc, const char* argv[]){
   list<Course*> courses;
   ifstream s_file, c_file;
   s_file.open(s_file_name);
+  string student_name = "";
   while (s_file.good()){
     // read in the file and make students
+    
   }
   s_file.close();
   c_file.open(c_file_name);
