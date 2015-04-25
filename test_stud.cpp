@@ -49,17 +49,13 @@ int main(int argc, const char* argv[]){
   cout << c1->removeStud()->getName() << "\n"; // Alex
   cout << c1->getNumStuds() << "\n"; // 2
   c2->addStudent(david);
-  cout << "ok\n";
   c2->addStudent(bob);
-  cout << "ok1\n";
   c2->addStudent(alex);
-  cout << "ok2\n";
   c2->addStudent(carl);
-  cout << "ok3\n";
-  //cout << c2->removeStud()->getName() << "\n"; // Carl
-  //cout << c2->removeStud()->getName() << "\n"; // Bob
-  //cout << c2->removeStud()->getName() << "\n"; // David
-  //cout << c2->removeStud()->getName() << "\n"; // Alex
+  cout << c2->removeStud()->getName() << "\n"; // Carl
+  cout << c2->removeStud()->getName() << "\n"; // Bob
+  cout << c2->removeStud()->getName() << "\n"; // David
+  cout << c2->removeStud()->getName() << "\n"; // Alex
 
 
 
@@ -79,7 +75,6 @@ int main(int argc, const char* argv[]){
   alex->setGPA(3.99);
   cout << alex->getGPA() << "\n"; // 3.99
   cout << alex->removePref()->getName() << "\n"; // CIS160 
-  
 
   return 0;
 }

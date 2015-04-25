@@ -3,6 +3,7 @@
 #include <list>
 #include <iterator>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -107,12 +108,19 @@ void Course::setStudents(list<Student*> student_list) {
 }
 
 void Course::addStudent(Student* student_ptr) {
-  // should insert according to GPA, assumes osrted list
+  // should insert according to GPA, assumes sorted list
+  bool inserted = false;
+  if (students.empty()) {
+    students.push_front(student_ptr);
+    return;
+  } 
   for (auto it = students.begin(); it != students.end(); ++it){
     if ((*it)->getGPA() > student_ptr->getGPA()) continue;
     students.insert(it, student_ptr);
+    inserted = true;
     break;
   }
+  if (!inserted) students.push_back(student_ptr);
 }
 
 list<Student*> Course::getStudents() {
@@ -131,6 +139,5 @@ Student* Course::removeStud(){ // new
   Student *temp;
   temp = students.back();
   students.remove(*prev(students.end()));
-  //students.pop_back();
   return temp;
 }
