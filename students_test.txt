@@ -1,0 +1,14 @@
+Alex: 3.21, {Econ French Spanish Physics Math Chemistry German CIS190};
+Joe: 3.77, {CIS190 Math Spanish German Chemistry Italian French Physics};
+Matt: 2.89, {Poli_Sci Italian German Econ Physics Math};
+Taryn: 3.67, {Econ Physics Chemistry Spanish Math};
+Fred: 4.34, {French Poli_Sci CIS190 Math Chemistry Spanish Econ};
+Jake: 3.35, {Econ Physics Spanish French CIS190 German};
+Beer: 1.00, {Spanish French Poli_Sci Econ};
+Jack: 1.23, {Physics Chemistry Math German};
+Daniels: 3.45, {Italian CIS190 Math Spanish Chemistry Econ};
+Killian: 4.59, {Italian German CIS190 Spanish Physics Math};
+Tonie: 2.24, {Chemistry French CIS190 Math Italian German};
+Rebecca: 1.45, {Math French Physics}
+Marc: 3.00, {Math Spanish Chemistry German};
+Karen: 4.00, {Italian CIS190 Physics Poli_Sci Physics Econ Math};#

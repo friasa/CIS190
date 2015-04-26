@@ -8,7 +8,6 @@
  *     A list x 
  *     A list y
  */
-#pragma once
 #include "de_alg.hpp"
 #include "obs.hpp"
 #include <list>
@@ -43,13 +42,7 @@ list<Student*> deferred_acceptance(list<Student*> students,
       temp.push_front(*it);
     }
   }
-  cout << "temp contains";
-  for (auto it = temp.begin(); it != temp.end(); ++it){
-    cout << ' ' << (*it)->getName();
-  }
-  cout << '\n';
   // here we go
-  cout << "loop\n";
   while (temp.size() > 0){
     for (auto it = temp.begin(); it != temp.end(); ++it){
       fav = (*it)->getPreferences().front();

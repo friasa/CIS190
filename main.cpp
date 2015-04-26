@@ -13,15 +13,6 @@
 
 using namespace std;
 
-void printStudents(list<Student*> students){
-  for (auto it = students.begin(); it != students.end(); it++){
-    cout << (*it)->getName() << ": ";
-  }
-}
-
-
-
-
 int main(int argc, const char* argv[]){
 
   // check usage
@@ -30,12 +21,9 @@ int main(int argc, const char* argv[]){
     exit(-1);
   }
 
-
-
   list<Course*> course_register;
   list<Student*> all_students;
   
-
   // parse input
   string s_file_name, c_file_name;
   ifstream s_file, c_file;
@@ -46,17 +34,13 @@ int main(int argc, const char* argv[]){
   c_file.open(c_file_name);
   int capacity;
   int i;
-  //char cap_str[10] = "";
   string cap_str;
   char* c = new char [1];
   string course_name;
   Course* temp_course;
-  //while (c_file.good()){
   while (!c_file.eof()) {
     // read in the file and make course
-
     course_name = "";
-
     // get course name
     while(true) {
       c_file.read(c, 1);
@@ -65,7 +49,6 @@ int main(int argc, const char* argv[]){
       }
       course_name.append(c);
     }
-
     // get capacity
     i = 0;
     cap_str = "";
@@ -80,7 +63,6 @@ int main(int argc, const char* argv[]){
     }
     capacity = stoi(cap_str);
 
-    
     temp_course = new Course(course_name, capacity);
     course_register.push_front(temp_course);
 
@@ -99,7 +81,6 @@ int main(int argc, const char* argv[]){
 
  C_FILE_DONE:
   c_file.close();
-
   
   // parse s_file
   list<Course*> course_prefs;
@@ -110,17 +91,12 @@ int main(int argc, const char* argv[]){
   Student* temp;
   float gpa;
   i = 0;
-  //char gpa_str[10] = "";
   string gpa_str;
   while (s_file.good()) {
     // read in the file and make students
-    //Student* stud = new Student();
-
     student_name = "";
     course_names.clear();
     course_prefs.clear();
-
-    
     // get student name
     while(true) {
       s_file.read(c, 1);
@@ -129,7 +105,6 @@ int main(int argc, const char* argv[]){
       }
       student_name.append(c);
     }
-
     // get gpa
     i = 0;
     gpa_str = "";
@@ -143,8 +118,6 @@ int main(int argc, const char* argv[]){
       i++;
     }
     gpa = stof(gpa_str);
-
-
     // get student's preferences
     while (true) {
       s_file.read(c, 1);
@@ -168,7 +141,6 @@ int main(int argc, const char* argv[]){
       course.append(c);
     }
     
-    
     // make a list of courses from the list of strings
     for (auto it1 = course_names.begin(); it1 != course_names.end(); ++it1) {
       for (auto it2 = course_register.begin(); it2 != course_register.end(); ++it2) {
@@ -180,17 +152,7 @@ int main(int argc, const char* argv[]){
     
     // make a new student by passing in name, gpa, course list
     temp = new Student(student_name, course_prefs, 0, gpa);
-    
-    
-    
-    
-    // cout << "---" << student_name << "---\n";
-    // cout << "---" << gpa << "---\n";
-    // for (auto it = course_prefs.begin(); it != course_prefs.end(); ++it) {
-    //   cout << "---" << (*it)->getName() << "---\n";
-    // }
-    // cout << "\n\n\n";
-
+    all_students.push_front(temp);
     // read chars until get to the beginning of next student
     while (true) {
       s_file.read(c, 1);
@@ -206,12 +168,21 @@ int main(int argc, const char* argv[]){
 
  S_FILE_DONE:
   s_file.close();
- 
+  
   // run matching algorithm
   deferred_acceptance(all_students, course_register);
   
-  // TODO: make a print method to print out the students and courses
-  
+  // print out the students and courses
+  for (auto it = all_students.begin(); it != all_students.end(); ++it){
+    cout << (*it)->getName() << ":  {";
+    while (!(*it)->getCourses().empty()){
+      if ((*it)->getCourses().size() == 1) 
+	cout << (*it)->getCourses().front()->getName() << "}";
+      else cout << (*it)->getCourses().front()->getName() << ", ";
+      (*it)->removeCourses((*it)->getCourses().front());
+    }
+    cout << "\n";
+  }
 
   return 0;
 }

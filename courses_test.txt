@@ -1,0 +1,10 @@
+Econ: 5;
+Physics: 14;
+Chemistry: 9;
+Poli_Sci: 7;
+Spanish: 3;
+French: 6;
+Math: 23;
+German: 8;
+Italian: 9;
+CIS190: 25;#

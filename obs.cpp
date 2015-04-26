@@ -1,4 +1,3 @@
-#pragma once
 #include "obs.hpp"
 #include <list>
 #include <iterator>
