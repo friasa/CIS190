@@ -19,7 +19,7 @@ int main(int argc, const char* argv[]){
   Course *c12 = new Course("CIS220", 100);
   Course *c13 = new Course("CIS230", 100);
   Course *c14 = new Course("CIS240", 100);
-  Course *c15 = new Course("CIS2500", 100);
+  Course *c15 = new Course("CIS250", 100);
   list<Course*> a_pref;
   list<Course*> b_pref;
   list<Course*> c_pref;
@@ -48,6 +48,7 @@ int main(int argc, const char* argv[]){
   d_pref.push_front(c13);
   d_pref.push_front(c14);
   d_pref.push_front(c15);
+  d_pref.push_front(c2);
   //
   Student *alex = new Student("Alex", a_pref, 0, 4.00);
   Student *bob = new Student("Bob", b_pref, 0, 3.73);
@@ -82,15 +83,13 @@ int main(int argc, const char* argv[]){
  
   cout << full_s.size() << "\n";
   
-  
-
-
   cout << "print\n";
   // here be answers
   for (auto it = full_s.begin(); it != full_s.end(); ++it){
     cout << (*it)->getName() << ": ";
-    for (auto it2 = (*it)->getCourses().begin(); it2 != (*it)->getCourses().end(); ++it){
-      cout << (*it2)->getName() << ", ";
+    while (!(*it)->getCourses().empty()){
+      cout << (*it)->getCourses().front()->getName() << ", ";
+      (*it)->removeCourses((*it)->getCourses().front());
     }
     cout << "\n";
   }

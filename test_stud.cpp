@@ -60,6 +60,7 @@ int main(int argc, const char* argv[]){
 
 
   // test student
+  cout << alex->getName() << "\n"; // Alex
   alex->setName("ALEX2");
   cout << alex->getName() << "\n"; // ALEX2
   alex->setPreferences(c_pref);
