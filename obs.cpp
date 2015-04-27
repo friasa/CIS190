@@ -22,7 +22,14 @@ Student::Student(){
 }
 
 Student::~Student(){
+  delete &name;
+  delete &credits;
+  delete &GPA;
+  delete &is_full;
   for (auto it = prefs.begin(); it != prefs.end(); ++it){
+    delete *it;
+  }
+  for (auto it = courses.begin(); it != courses.end(); ++it){
     delete *it;
   }
 }
@@ -93,9 +100,8 @@ Course::Course(){
 }
 
 Course::~Course(){
-  for (auto it = students.begin(); it != students.end(); ++it){
-    delete *it;
-  }
+  delete &name;
+  delete &capacity;
 }
 
 string Course::getName() {

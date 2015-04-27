@@ -184,5 +184,7 @@ int main(int argc, const char* argv[]){
     cout << "\n";
   }
 
+  delete c;
+
   return 0;
 }
