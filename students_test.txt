@@ -11,4 +11,6 @@ Killian: 4.59, {Italian German CIS190 Spanish Physics Math};
 Tonie: 2.24, {Chemistry French CIS190 Math Italian German};
 Rebecca: 1.45, {Math French Physics}
 Marc: 3.00, {Math Spanish Chemistry German};
-Karen: 4.00, {Italian CIS190 Physics Poli_Sci Physics Econ Math};#
+Karen: 4.00, {Italian CIS190 Physics Poli_Sci Physics Econ Math};
+Jim: 3.66, {Physics Poli_Sci WRONG};
+Frank: 3.55, {Math German Chemistry Econ CIS190 French};#
