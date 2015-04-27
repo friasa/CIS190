@@ -21,6 +21,12 @@ Student::Student(){
   credits = 0;
 }
 
+Student::~Student(){
+  for (auto it = prefs.begin(); it != prefs.end(); ++it){
+    delete *it;
+  }
+}
+
 void Student::setPreferences(list<Course*> _courses){
   prefs = _courses;
 }
@@ -84,6 +90,12 @@ Course::Course(string course_name, int capacity) {
 Course::Course(){
   name = "";
   capacity = 0;
+}
+
+Course::~Course(){
+  for (auto it = students.begin(); it != students.end(); ++it){
+    delete *it;
+  }
 }
 
 string Course::getName() {

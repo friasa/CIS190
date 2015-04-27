@@ -35,7 +35,7 @@ int main(int argc, const char* argv[]){
   int capacity;
   int i;
   string cap_str;
-  char* c = new char [1];
+  char* c = new char[1];
   string course_name;
   Course* temp_course;
   while (!c_file.eof()) {
