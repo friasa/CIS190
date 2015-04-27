@@ -184,6 +184,13 @@ int main(int argc, const char* argv[]){
     cout << "\n";
   }
 
+  for (auto it = all_students.begin(); it != all_students.end(); ++it){
+    delete *it;
+  }
+  for (auto it = course_register.begin(); it != course_register.end(); ++it){
+    delete *it;
+  }
+
   delete c;
 
   return 0;

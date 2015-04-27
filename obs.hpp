@@ -29,7 +29,7 @@ public:
   Student* removeStud(); // new: Should remove last student
   Course(string course_name, int capacity);
   Course();
-  ~Course();
+  //~Course();
 };
 
 class Student {
@@ -57,6 +57,6 @@ public:
   void setGPA(float _GPA); // new
   Student(string _name, list<Course*> _prefs, unsigned int _credits, float _GPA); // update
   Student();
-  ~Student();
+  //~Student();
 };
 
