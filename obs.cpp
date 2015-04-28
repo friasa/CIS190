@@ -21,19 +21,6 @@ Student::Student(){
   credits = 0;
 }
 
-/*Student::~Student(){
-  delete &name;
-  delete &credits;
-  delete &GPA;
-  delete &is_full;
-  for (auto it = prefs.begin(); it != prefs.end(); ++it){
-    delete *it;
-  }
-  for (auto it = courses.begin(); it != courses.end(); ++it){
-    delete *it;
-  }
-  }*/
-
 void Student::setPreferences(list<Course*> _courses){
   prefs = _courses;
 }
@@ -98,11 +85,6 @@ Course::Course(){
   name = "";
   capacity = 0;
 }
-
-/*Course::~Course(){
-  delete &name;
-  delete &capacity;
-  }*/
 
 string Course::getName() {
   return name;

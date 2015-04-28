@@ -44,7 +44,7 @@ list<Student*> deferred_acceptance(list<Student*> students,
   }
   // here we go
   while (temp.size() > 0){
-    for (auto it = temp.begin(); it != temp.end(); ++it){
+    for (auto it = temp.begin(); it != temp.end();){
       fav = (*it)->getPreferences().front();
       if (fav->getNumStuds() < fav->getCapacity()){
 	(*it)->addCourse(fav);
@@ -60,7 +60,8 @@ list<Student*> deferred_acceptance(list<Student*> students,
       }
       (*it)->removePref();
       if ((*it)->getPreferences().empty()) (*it)->is_full = true;
-      if ((*it)->is_full) temp.remove(*it);
+      if ((*it)->is_full) temp.remove(*it++);
+      else ++it;
     }
   }
   return students;
