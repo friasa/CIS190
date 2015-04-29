@@ -16,14 +16,14 @@ obs.o: obs.cpp obs.hpp
 	g++ -c obs.cpp -std=c++11 -Wall
 
 clean:
-	mv main working_file/
+	rm main
 
 cleaner:
-	mv *~ working_file/
-	mv *.o working_file/
+	rm *~ 
+	rm *.o
 
 cleanest: clean cleaner
 
 clean_test: 
-	mv test_stud working_file/
-	mv test_de working_file/
+	rm test_stud
+	rm test_de
